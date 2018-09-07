@@ -25,6 +25,7 @@ class Article extends Component {
                     Read the full story hear
                     </a>
                     <p style={{fontSize:'smaller', color:'#777'}}>Source: {this.props.sourceName}</p>
+                    <p>score: {this.props.score}</p>
                 </div>
             </div>
         );

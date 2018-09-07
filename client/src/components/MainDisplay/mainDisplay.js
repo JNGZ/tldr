@@ -17,7 +17,8 @@ class mainDisplay extends Component {
 
   static propTypes = {
     getHeadlines: PropTypes.func.isRequired,
-    headlines: PropTypes.array.isRequired
+    headlines: PropTypes.array.isRequired,
+
   }
 
   static defaultProps = {
@@ -47,6 +48,7 @@ class mainDisplay extends Component {
                   url={article.url} 
                   urlToImage={article.urlToImage}
                   sourceName={article.sourceName}
+                  score={article.score}
                   style={{backgroundColor:'blue'}}
                   />
                 )}
