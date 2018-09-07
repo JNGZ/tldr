@@ -1,2 +1,5 @@
 export const GET_CUSTOMERS = "GET_CUSTOMERS";
 export const UPDATE_CUSTOMER = "REMOVE_CUSTOMER";
+export const GET_HEADLINES = "GET_HEADLINES";
+export const SEND_SEARCH = "SEND_SEARCH";
+export const GET_SENTIMENT = "GET_SENTIMENT";

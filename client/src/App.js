@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Provider } from 'react-redux'
-import logo from './logo.svg'
+import logo from './circle2.svg'
 import './App.css'
 import store from './store'
-import Customers from './components/Customer/customers'
+import MainDisplay from './components/MainDisplay/mainDisplay'
 
 class App extends Component {
 
@@ -13,9 +13,12 @@ class App extends Component {
         <div className="App">
           <header className="App-header">
             <img src={ logo } className="App-logo" alt="logo"/>
-            <h1 className="App-title">React/Redux Express Starter</h1>
+            <h1 className="App-title">TL;DR</h1>
           </header>
-          <Customers/>
+          <div className="App-body">
+          <MainDisplay/>
+          </div>
+          
         </div>
       </Provider>
     )

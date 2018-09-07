@@ -1,0 +1,40 @@
+/* #searchBar{
+    height: 50px;
+    font-size: x-large;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: white;
+    box-shadow: 1px 5px 12px #cccccc;
+} */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200');
+
+#searchBar[type=text] {
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    height: 30px;
+    opacity: .5;
+    box-sizing: border-box; 
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    font-size: 16px;
+    background-color: white;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: height 0.3s ease-in-out;
+    -moz-transition: height 0.3s ease-out;
+    -o-transition: height 0.3s ease-out;
+    transition: height 0.3s ease-in-out;
+    outline: none;
+}
+
+#searchBar[type=text]:focus {
+    height: 90px;
+    width: 100%;
+    opacity: 1;
+    outline: none;
+    border: none;
+    -webkit-transition: background-color .3s ease-out;
+    -moz-transition: background-color .3s ease-out;
+    -o-transition: background-color .3s ease-out;
+    transition: background-color .3s ease-out;
+    background-color: #f4f7f6;
+    font-size: xx-large;
+}
