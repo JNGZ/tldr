@@ -37,7 +37,6 @@ app.post('/api/headlines', (req, res) => {
     title: res.title,
   })))
   .then(response => {
-    
     for (let index = 0; index < response.length; index++) {
 
       const object = response[index];
@@ -55,14 +54,12 @@ app.post('/api/headlines', (req, res) => {
             console.log(`Text: ${text}`);
             console.log(`Sentiment score: ${sentiment.score}`);
             console.log(`Sentiment magnitude: ${sentiment.magnitude} \n`);
-            
         })
         .catch(err => {
           console.error('ERROR:', err);
         });
         
         object.score = index;
-      
     }
 
 

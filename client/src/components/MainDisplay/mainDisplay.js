@@ -42,14 +42,14 @@ class mainDisplay extends Component {
               <ul>
                 {this.props.headlines.map(article =>
                   <Article 
-                  key={this.props.headlines.indexOf(article)}
-                  title={article.title} 
-                  description={article.description} 
-                  url={article.url} 
-                  urlToImage={article.urlToImage}
-                  sourceName={article.sourceName}
-                  score={article.score}
-                  style={{backgroundColor:'blue'}}
+                    key={this.props.headlines.indexOf(article)}
+                    title={article.title} 
+                    description={article.description} 
+                    url={article.url} 
+                    urlToImage={article.urlToImage}
+                    sourceName={article.sourceName}
+                    score={article.score}
+                    style={{backgroundColor:'blue'}}
                   />
                 )}
               </ul>
