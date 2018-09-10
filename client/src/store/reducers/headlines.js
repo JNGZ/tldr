@@ -2,8 +2,11 @@ import {GET_HEADLINES, UPDATE_HEADLINES} from '../actions/constants'
 
 const headlinesReducer = (state = [], {type, payload}) => {
     switch(type){
+
         case GET_HEADLINES:
             return payload
+
+            
         case UPDATE_HEADLINES:
             const arrayOfObjects = [];
             for (let index = 0; index < payload.length; index++) {
@@ -11,7 +14,9 @@ const headlinesReducer = (state = [], {type, payload}) => {
                 const element = state[index];
                 if(element.id === article.data.id.id){
                     const newObject = {
+                        // Make copy of current state
                         ...state[index],
+                        // Append/Push new object
                         score: article.data.sentiment
                     }
                     arrayOfObjects.push(newObject);
@@ -19,7 +24,9 @@ const headlinesReducer = (state = [], {type, payload}) => {
                     console.log('no match')
                 }
             }
-            return arrayOfObjects;       
+            return arrayOfObjects;   
+
+
         default:
             return state
     }

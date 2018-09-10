@@ -4,10 +4,7 @@ import {connect } from 'react-redux';
 
 
 import SearchBar from '../Search/form'
-
 import {getHeadlines} from '../../store/actions/headlines'
-import {getSentiment} from '../../store/actions/sentiment'
-
 
 
 import './mainDisplay.css';
@@ -18,29 +15,22 @@ class mainDisplay extends Component {
 
   static propTypes = {
     getHeadlines: PropTypes.func.isRequired,
-
     headlines: PropTypes.array.isRequired,
-    getSentiment: PropTypes.func.isRequired,
-    sentiments: PropTypes.array.isRequired,
-    
-
   }
 
   static defaultProps = {
     // headlines: [],
-    sentiments: []
   }
 
   submit = values => {
     this.props.getHeadlines(values);
-    // this.props.getSentiment(values);
   }
 
   render() {
 
     return (
       <div> 
-      <SearchBar onSubmit={this.submit}/>
+      <SearchBar onSubmit={this.submit} id="theSearch"/>
         <div className="container" id="container">
         <div className="row">
             <div className="col">
@@ -48,12 +38,13 @@ class mainDisplay extends Component {
                 {this.props.headlines.map(article =>
                   <Article 
                     key={this.props.headlines.indexOf(article)}
-                    title={article.title} 
+                    title={article.title}
+                    author={article.author} 
                     description={article.description} 
                     url={article.url} 
                     urlToImage={article.urlToImage}
                     sourceName={article.sourceName}
-                    id={article.id}
+                    // id={article.id}
                     score={article.score}
                     style={{backgroundColor:'blue'}}
                   />
@@ -70,12 +61,10 @@ class mainDisplay extends Component {
 const mapStateToProps = (state) => ({
   headlines: state.headlines,
   form: state.form,
-  sentiments: state.sentiments
 })
 
 const dispatchToProps = (dispatch) => ({
-   getHeadlines: (values) => dispatch(getHeadlines(values)),
-   getSentiment: (values) => dispatch(getSentiment(values))
+   getHeadlines: (values) => dispatch(getHeadlines(values))
 })
 
 export default connect(mapStateToProps, dispatchToProps)(mainDisplay);

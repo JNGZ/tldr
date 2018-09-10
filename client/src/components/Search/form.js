@@ -15,11 +15,10 @@ let SearchBar = props => {
             type="text" 
             placeholder= "Search worldwide news here.."
             style={{textAlign: 'center'}}
-            data-toggle="tooltip"
             />
            
         </div>
-    </form>)
-}
+    </form>
+    )}
 
 export default SearchBar = reduxForm({form: 'search'})(SearchBar)

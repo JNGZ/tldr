@@ -9,9 +9,80 @@
   
 }
 
+#negative {
+  min-width: 100%;
+  min-height: 20%;
+  margin-left: 8%;
+  margin-top: 10%;
+  /* font-family: 'Open Sans', Tahoma, Geneva, Verdana, sans-serif; */
+  background-image: linear-gradient( #fbeee6 , white);
+  box-shadow: 0 0 7px rgba(0,0,0,0.1);
+}
+
+#neutral {
+  min-width: 100%;
+  min-height: 20%;
+  margin-left: 8%;
+  margin-top: 10%;
+  /* font-family: 'Open Sans', Tahoma, Geneva, Verdana, sans-serif; */
+  background-image: linear-gradient(#f4f7f6, white);
+  box-shadow: 0 0 7px rgba(0,0,0,0.1);
+}
+#positive {
+  min-width: 100%;
+  min-height: 20%;
+  margin-left: 8%;
+  margin-top: 10%;
+  /* font-family: 'Open Sans', Tahoma, Geneva, Verdana, sans-serif; */
+  background-image: linear-gradient( #eafaf1 , white);
+  box-shadow: 0 0 7px rgba(0,0,0,0.1);
+}
+
+
+#negative:hover {
+  min-width: 100%;
+  min-height: 20%;
+  margin-left: 8%;
+  margin-top: 10%;
+  /* font-family: 'Open Sans', Tahoma, Geneva, Verdana, sans-serif; */
+  background-image: linear-gradient( #fbeee600 , white);
+  box-shadow: 0 0 17px rgba(0,0,0,0.2);
+  border-color: white;
+}
+
+#neutral:hover {
+  min-width: 100%;
+  min-height: 20%;
+  margin-left: 8%;
+  margin-top: 10%;
+  /* font-family: 'Open Sans', Tahoma, Geneva, Verdana, sans-serif; */
+  background-image: linear-gradient(#f4f7f600, white);
+  box-shadow: 0 0 17px rgba(0,0,0,0.2);
+  border-color: white;
+}
+#positive:hover {
+  min-width: 100%;
+  min-height: 20%;
+  margin-left: 8%;
+  margin-top: 10%;
+  /* font-family: 'Open Sans', Tahoma, Geneva, Verdana, sans-serif; */
+  background-image: linear-gradient( #eafaf100 , white);
+  box-shadow: 0 0 17px rgba(0,0,0,0.2);
+  border-color: white;
+}
+
+#img{
+  min-height: 186px;
+}
+
+#textbody{
+  min-height: 356px;
+}
+
 .card-title{
   color: #444444;
   font-weight: 300;
+  min-height: 72px; 
 }
 .card-text{
   color: #777;
@@ -30,6 +101,11 @@ a:hover   { color: #7FDBFF; }
 a:active  {
   transition: color .3s;
   color: #007BE6;
+}
+
+#sentiment {
+  font-weight: 200;
+  font-size: x-small;
 }
 
 .link { text-decoration: none; }

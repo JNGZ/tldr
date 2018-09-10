@@ -7,6 +7,7 @@
 } */
 @import url('https://fonts.googleapis.com/css?family=Montserrat:100,200');
 
+
 #searchBar[type=text] {
     font-family: 'Montserrat', sans-serif;
     width: 100%;
@@ -22,19 +23,25 @@
     -moz-transition: height 0.3s ease-out;
     -o-transition: height 0.3s ease-out;
     transition: height 0.3s ease-in-out;
-    outline: none;
+    color:  #03a9f4  ;
+    box-shadow: 0 10 5 rgba(0,0,0,0.2);
 }
 
 #searchBar[type=text]:focus {
     height: 90px;
     width: 100%;
     opacity: 1;
-    outline: none;
+    outline: 0;
     border: none;
     -webkit-transition: background-color .3s ease-out;
     -moz-transition: background-color .3s ease-out;
     -o-transition: background-color .3s ease-out;
     transition: background-color .3s ease-out;
+    -webkit-transition: height 0.2s ease-in-out;
+    -moz-transition: height 0.2s ease-out;
+    -o-transition: height 0.2s ease-out;
+    transition: height 0.2s ease-in-out;
     background-color: #f4f7f6;
     font-size: xx-large;
+    color: #03a9f4  ;
 }

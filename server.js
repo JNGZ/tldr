@@ -78,9 +78,9 @@ app.post('/api/sentiment', (req,res) => {
     })
     .catch(err => {
       console.error('ERROR:', err);
-});
-})
+    });
 
+})
 
 const port = 5000;
 
