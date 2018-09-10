@@ -7,6 +7,9 @@ const middleware = [
 ]
 const withDevTools = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-export default createStore(rootReducer, withDevTools(
+const store = createStore(rootReducer, withDevTools(
   applyMiddleware(...middleware)
-))
+));
+
+export default store
+

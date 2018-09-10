@@ -5,8 +5,9 @@ import {connect } from 'react-redux';
 
 import SearchBar from '../Search/form'
 
-import {getCustomers} from '../../store/actions/customer'
 import {getHeadlines} from '../../store/actions/headlines'
+import {getSentiment} from '../../store/actions/sentiment'
+
 
 
 import './mainDisplay.css';
@@ -17,19 +18,23 @@ class mainDisplay extends Component {
 
   static propTypes = {
     getHeadlines: PropTypes.func.isRequired,
+
     headlines: PropTypes.array.isRequired,
+    getSentiment: PropTypes.func.isRequired,
+    sentiments: PropTypes.array.isRequired,
+    
 
   }
 
   static defaultProps = {
-    headlines: []
+    // headlines: [],
+    sentiments: []
   }
 
   submit = values => {
     this.props.getHeadlines(values);
+    // this.props.getSentiment(values);
   }
-
-
 
   render() {
 
@@ -48,6 +53,7 @@ class mainDisplay extends Component {
                     url={article.url} 
                     urlToImage={article.urlToImage}
                     sourceName={article.sourceName}
+                    id={article.id}
                     score={article.score}
                     style={{backgroundColor:'blue'}}
                   />
@@ -63,12 +69,13 @@ class mainDisplay extends Component {
 
 const mapStateToProps = (state) => ({
   headlines: state.headlines,
-  form: state.form
+  form: state.form,
+  sentiments: state.sentiments
 })
 
 const dispatchToProps = (dispatch) => ({
-   getCustomers: () => dispatch(getCustomers()),
    getHeadlines: (values) => dispatch(getHeadlines(values)),
+   getSentiment: (values) => dispatch(getSentiment(values))
 })
 
 export default connect(mapStateToProps, dispatchToProps)(mainDisplay);
