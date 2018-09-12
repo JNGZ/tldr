@@ -4,6 +4,7 @@ import logo from './circle2.svg'
 import './App.css'
 import store from './store'
 import MainDisplay from './components/MainDisplay/mainDisplay'
+import {Decimal} from 'decimal.js'
 
 
 

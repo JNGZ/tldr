@@ -6,7 +6,11 @@ class Chart extends Component{
     options = {
             scales:{
                 xAxes: [{stacked: true}],
-                yAxes: [{stacked: true}]
+                yAxes: [{
+                    ticks:{
+                        beginAtZero: true
+                    }
+                }]
             },
             legend:{
                 position: 'right'

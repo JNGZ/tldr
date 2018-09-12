@@ -1,4 +1,4 @@
-import {GET_HEADLINES, UPDATE_HEADLINES, UPDATE_CHART} from './constants'
+import {GET_HEADLINES, UPDATE_HEADLINES, UPDATE_CHART, INITIATE_CHART} from './constants'
 
 import axios from 'axios'
 
@@ -23,7 +23,7 @@ export function getHeadlines(query){
             return state
         })
         .then(result => {
-            console.log('logging result client side',result)
+            // console.log('logging result client side',result)
 
             const promises = [
                 new Promise(resolve => {
@@ -74,7 +74,15 @@ export function getHeadlines(query){
                 article: sentiment,
                 query: query
             }
-            dispatch({type: UPDATE_CHART, payload: combinedPayloadObject})            
+            // console.log('get the state of chart', getState().chart)
+            if(getState().chart.length > 0){
+                console.log('chart is not empty')
+                dispatch({type: UPDATE_CHART, payload: combinedPayloadObject})
+            }else{
+                dispatch({type: INITIATE_CHART, payload: combinedPayloadObject})  
+                console.log('chart is empty')
+            }
+                 
         })
         .catch(error => {
             throw new Error('Higher-level error. ' + error.message);
