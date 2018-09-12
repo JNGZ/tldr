@@ -1,4 +1,4 @@
-import {GET_HEADLINES, UPDATE_HEADLINES} from './constants'
+import {GET_HEADLINES, UPDATE_HEADLINES, UPDATE_CHART} from './constants'
 
 import axios from 'axios'
 
@@ -22,7 +22,7 @@ export function getHeadlines(query){
             const state = getState().headlines
             return state
         })
-        .then( result => {
+        .then(result => {
             console.log('logging result client side',result)
 
             const promises = [
@@ -62,11 +62,19 @@ export function getHeadlines(query){
                 }
             )
         })
-        .then( sentiment => {
-            console.log('sentiments',sentiment)
+        .then(sentiment => {
             dispatch({type: UPDATE_HEADLINES, payload: sentiment})
-            // dispatch({type: UPDATE_HEADLINES, payload: sentiment.data})
-            
+            return sentiment
+        })
+        .then(sentiment => {
+            // isolate the query from state
+            const query = getState().form.search.values.query
+         
+            const combinedPayloadObject = {
+                article: sentiment,
+                query: query
+            }
+            dispatch({type: UPDATE_CHART, payload: combinedPayloadObject})            
         })
         .catch(error => {
             throw new Error('Higher-level error. ' + error.message);
