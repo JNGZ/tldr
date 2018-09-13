@@ -2,10 +2,12 @@ const express = require('express');
 const language = require('@google-cloud/language');
 const axios = require('axios')
 const request = require('request');
-
-const app = express();
 const bodyParser = require('body-parser')
 
+const app = express();
+
+
+// Google natural language client instance
 const client = new language.LanguageServiceClient({
   keyFilename: './tldrNews-e7bf7783f089.json'
 });
@@ -13,10 +15,14 @@ const client = new language.LanguageServiceClient({
 
 app.use(bodyParser.json())
 
+
+//////////////  P O S T   R E Q U E S T --- H E A D L I N E S
 app.post('/api/headlines', (req, res) => {
 
+  // Capture the request query
   let dataObject = encodeURI(Object.values(req.body)[0].query);
 
+  // Build the request url 
   let baseUrl = "https://newsapi.org/v2/"
   let endpoint = "everything?"
   let q = "q=" + dataObject
@@ -25,11 +31,12 @@ app.post('/api/headlines', (req, res) => {
   let apikey = "&apiKey=9b215697b6e64eee94691526f2a163d3"
   let url = baseUrl + endpoint + q + language + pageSize + apikey;
 
-
+  // Execute get request to NewsApi.com
   return axios.get(url)
-  // Add id to each atricle object
   .then(results => {
     const resultsObject = results.data.articles;
+    
+    // Add ID to each atricle object
     for (let index = 0; index < resultsObject.length; index++) {
       resultsObject[index].id = index;
     }
@@ -52,22 +59,27 @@ app.post('/api/headlines', (req, res) => {
 })
 
 
+//////////////  P O S T   R E Q U E S T --- S E N T I M E N T   A N A L Y S I S
 app.post('/api/sentiment', (req,res) => {
   
+  // Capture text to analyze
   const text = Object.values(req.body)[0].text;
   const id = Object.values(req.body)[0].id;
 
+  // Create document object and pass text to analyze
   const document = {
     content: text,
     type: 'PLAIN_TEXT',
   };
 
-    client
-    .analyzeSentiment({document: document})
+  // Send document to Google Language API for sentiment analysis
+  client.analyzeSentiment({document: document})
+    // Capture sentiment score from result
     .then(results => {
       const sentiment = results[0].documentSentiment;
       return sentiment.score;
     })
+    // Create sentiment Object and return to client side
     .then(sentiment => {
       const sentimentObject = {
         "id": id,
@@ -81,6 +93,8 @@ app.post('/api/sentiment', (req,res) => {
 
 })
 
+
 const port = 5000;
+
 
 app.listen(port, () => `Server running on port ${port}`);
