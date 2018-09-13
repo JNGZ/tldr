@@ -6,7 +6,6 @@ const request = require('request');
 const app = express();
 const bodyParser = require('body-parser')
 
-// store key file name in .env variable
 const client = new language.LanguageServiceClient({
   keyFilename: './tldrNews-e7bf7783f089.json'
 });
@@ -49,8 +48,6 @@ app.post('/api/headlines', (req, res) => {
   .then(response => {
     res.send(response)})
 })
-
-
 
 
 app.post('/api/sentiment', (req,res) => {
