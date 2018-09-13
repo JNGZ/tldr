@@ -1,4 +1,4 @@
-import {GET_HEADLINES, UPDATE_HEADLINES, UPDATE_CHART} from '../actions/constants'
+import {GET_HEADLINES, UPDATE_HEADLINES} from '../actions/constants'
 
 const headlinesReducer = (state = [], {type, payload}) => {
     switch(type){
