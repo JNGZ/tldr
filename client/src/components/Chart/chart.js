@@ -15,6 +15,7 @@ class Chart extends Component{
             legend:{
                 position: 'right'
             }
+            
         }
 
 

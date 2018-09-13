@@ -19,7 +19,7 @@ class mainDisplay extends Component {
   static propTypes = {
     getHeadlines: PropTypes.func.isRequired,
     headlines: PropTypes.array.isRequired,
-    chartData: PropTypes.object.isRequired
+    chartData: PropTypes.array.isRequired
 
   }
 

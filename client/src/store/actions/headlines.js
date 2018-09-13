@@ -85,10 +85,7 @@ export function getHeadlines(query){
                         
         })
         .catch(error => {
-            throw new Error('Higher-level error. ' + error.message);
-        })
-        .catch(error => {
-            console.error(error)
+            console.error('this is an error', error)
         })
     }
 

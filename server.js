@@ -46,7 +46,9 @@ app.post('/api/headlines', (req, res) => {
     id: res.id
   })))
   .then(response => {
-    res.send(response)})
+    res.send(response)
+  })
+  .catch(error => console.log(error))
 })
 
 
