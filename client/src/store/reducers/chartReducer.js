@@ -81,7 +81,6 @@ const chartReducer = (state = [], {type, payload}) => {
                 }else{   
                     const indexToSpliceAt = copyOfLabelState.length;
                     copyOfLabelState.splice(indexToSpliceAt,0,source)
-            
                     const sourceIndexNew = copyOfLabelState.indexOf(source);
                     copyOflastObjectInDataSetsArray[sourceIndexNew] = parseFloat(score);                   
                 }
