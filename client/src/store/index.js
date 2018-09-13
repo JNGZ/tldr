@@ -7,6 +7,8 @@ const middleware = [
 ]
 const withDevTools = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
+// Creat instance of redux store
+// pass the root reducer, dev tools for debugging, and THUNK middleware
 const store = createStore(rootReducer, withDevTools(
   applyMiddleware(...middleware)
 ));

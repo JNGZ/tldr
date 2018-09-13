@@ -4,6 +4,7 @@ import {reducer as formReducer } from 'redux-form'
 import headlinesReducer from './headlines';
 import chartReducer from './chartReducer';
 
+// Combine all the reducers into a root reducer
 export default combineReducers({
   headlines: headlinesReducer,
   chart: chartReducer,
