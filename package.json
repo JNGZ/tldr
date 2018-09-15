@@ -1,5 +1,5 @@
 {
-  "name": "reactexpress",
+  "name": "tldrNews",
   "version": "1.0.0",
   "description": "Starter kit for creating React/Redux and Express apps",
   "main": "server/server.js",

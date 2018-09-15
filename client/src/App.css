@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre:900');
 @import url('https://fonts.googleapis.com/css?family=Spectral');
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
-
+.App-body {
+  min-height: 100%;
+}
 .App-logo {
   animation: App-logo-spin infinite 10s linear;
   height: 60px;

@@ -1,4 +1,4 @@
-import {GET_HEADLINES, UPDATE_HEADLINES, UPDATE_CHART, INITIATE_CHART} from './constants'
+import {GET_HEADLINES, UPDATE_HEADLINES, UPDATE_CHART, INITIATE_CHART, HEADLINES_FAILURE} from './constants'
 
 import axios from 'axios'
 
@@ -7,6 +7,7 @@ export function getHeadlines(query){
     
     // Thunk - dispatches conditional actions to reducers
     return function (dispatch, getState){
+
 
         let queryString = Object.values(query)[0]
         // Make server side api post request for headlines
@@ -69,6 +70,7 @@ export function getHeadlines(query){
         })
         .catch(error => {
             console.error('this is an error', error)
+            dispatch({type: HEADLINES_FAILURE, payload: error})
         })
     }
 

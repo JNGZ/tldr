@@ -16,8 +16,7 @@ const headlinesReducer = (state = [], {type, payload}) => {
             for (let index = 0; index < payload.length; index++) {
                 const article = payload[index];
                 const element = state[index];
-                console.log('element in headlines reducer for update',element);
-                
+               
                 // If there is a match add the score
                 if(element.id === article.data.id.id){
                     const newObject = {
