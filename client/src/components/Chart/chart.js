@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Bar} from 'react-chartjs-2';
+import './chart.css';
 
 class Chart extends Component{
 
@@ -14,6 +15,11 @@ class Chart extends Component{
             },
             legend:{
                 position: 'right'
+            },
+            title:{
+                position: 'top',
+                display: true,
+                text: 'Aggregate Semantic Scores by Source'
             }
             
         }
@@ -21,8 +27,8 @@ class Chart extends Component{
 
     render(){
         return(
-            <div>
-                <Bar 
+            <div id="Bar">
+                <Bar
                 data={{
                     labels: this.props.labels,
                     datasets: this.props.datasets
