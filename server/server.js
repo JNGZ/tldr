@@ -99,4 +99,4 @@ app.post('/api/sentiment', (req,res) => {
 const port = 5000;
 
 
-app.listen(port, () => `Server running on port ${port}`);
+module.exports = app.listen(port, () => `Server running on port ${port}`);
