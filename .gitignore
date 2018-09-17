@@ -1,4 +1,4 @@
-/node_modules
+/node_modules/
 package-lock.json/
 .idea
 tldrNews-e7bf7783f089.json

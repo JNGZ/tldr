@@ -28,7 +28,6 @@ class mainDisplay extends Component {
   }
 
   removeError = () => {
-    console.log('hit button');
     this.props.removeError();
   }
 
@@ -56,8 +55,6 @@ class mainDisplay extends Component {
             </div>
       )
     }else{
-      console.log('main else')
-      console.log('the error',error)
     return (
       <div> 
       <SearchBar onSubmit={this.submit} id="theSearch"/>
