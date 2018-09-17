@@ -20,7 +20,10 @@ npm run client
 ```
 
 ## Deployment Instructions
+Pul from docker hub repo: jngzqut/tldr
 
+## Running Test suite
+npm run test
 
 ### Authors
 

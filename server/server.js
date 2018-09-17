@@ -63,7 +63,6 @@ app.post('/api/headlines', (req, res) => {
 
 //////////////  P O S T   R E Q U E S T --- S E N T I M E N T   A N A L Y S I S
 app.post('/api/sentiment', (req,res) => {
-  
   // Capture text to analyze
   const text = Object.values(req.body)[0].text;
   const id = Object.values(req.body)[0].id;
